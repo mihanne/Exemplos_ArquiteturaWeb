@@ -1,0 +1,13 @@
+{
+	"noticias": [
+		{
+			"titulo": "Covid-19 29-03",
+			"noticia": "O Ministério da Saúde confirmou 4.256 infecções e 136 mortes por coronavírus (Covid-19) no Brasil. Foram 353 novos casos nas últimas 24 horas, com uma taxa de letalidade de 3,2%."
+		},
+		{
+		    "titulo": "Coronavírus: fim do isolamento social não impede recessão econômica",
+            "noticia": "Os presidentes do Brasil, Jair Bolsonaro, e dos Estados Unidos, Donald Trump, recentemente defenderam o fim do isolamento generalizado das populações\n e a retomada da vida normal para evitar uma crise maior."
+		}
+
+	]
+}
