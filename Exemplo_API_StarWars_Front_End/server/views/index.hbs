@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Geiser Games</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/favicon.png">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Abel|Sacramento">
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/principal.css">
+</head>
+<body>
+  <div class="container-fluid" id="site">
+    <nav class="navbar navbar-inverse" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <h1 class="page-brand"><a href="/">Geiser</a> <small> - seu computador a todo vapor</small></h1>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">Inicial <span class="sr-only">(current)</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+    <div class="row" id="conteudo">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <ul class="media-list">
+          {{#each jogadores}}
+          <!-- começa aqui as infos de um jogador -->
+          <li class="media player-card">
+            <!-- O número grande é um id de cada jogador que provém de jogadores.json, campo steamid -->
+            <a class="media-left media-middle" href="/jogador/{{steamid}}/">
+              <!-- A URL da foto do jogador provem de jogadores.json, do campo avatarmedium -->
+              <img src="{{avatarmedium}}" class="avatar">
+            </a>
+            <div class="media-body">
+              <h3 class="media-heading">
+                <!-- O número grande é um id de cada jogador que provém de jogadores.json, campo steamid -->
+                <!-- O apelido do jogador provém de jogadores.json, campo personaname -->
+                <a href="/jogador/{{steamid}}/">{{personaname}}</a>
+              </h3>
+              <dl class="dl-horizontal">
+                <!-- O nome real do jogador provém de jogadores.json, campo realname -->
+                <dt>Nome real:</dt><dd>{{realname}}</dd>
+                <!-- O país do jogador provém de jogadores.json, campo loccountrycode -->
+                <dt>País:</dt><dd>{{loccountrycode}}</dd>
+                <!-- A URL do perfil do jogador no Steam provém de jogadores.json, campo profileurl -->
+                <!-- O apelido do jogador provém de jogadores.json, campo personaname -->
+                <dt>Perfil no steam:</dt><dd><a href="{{profileurl}}">@{{personaname}}</a></dd>
+              </dl>
+            </div>
+            <div class="player-card-link-container media-right media-bottom">
+              <!-- O número grande é um id de cada jogador que provém de jogadores.json, campo steamid -->
+              <a href="/jogador/{{steamid}}/" class="player-card-link">
+                + detalhes
+              </a>
+            </div>
+          </li>
+          <!-- termina aqui as infos de um jogador -->
+          {{/each}}
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
