@@ -1,8 +1,8 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+var createError = require('http-errors'); // usado para pegar os erros http das aplicações node  https://www.geeksforgeeks.org/generating-errors-using-http-errors-module-in-node-js/
+var express = require('express'); //https://developer.mozilla.org/pt-BR/docs/Learn/Server-side/Express_Nodejs/Introduction
+var path = require('path'); //O módulo fornece utilitários para trabalhar com caminhos de arquivos e diretórios. Ele pode ser acessado usando:
+var cookieParser = require('cookie-parser'); // criar um objeto para codificação de nomes de cookies para ser usado por outro middleware - http://expressjs.com/en/resources/middleware/cookie-parser.html
+var logger = require('morgan'); //O Morgan é uma biblioteca que pode ser utilizada no NodeJS para salvar o log das requisições feitas a API.https://programandosolucoes.dev.br/2020/10/02/nodejs-morgan/
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
