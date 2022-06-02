@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title>ChatJS - FrontEnd Magazine - DevMedia</title>
+     <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+<body>
+     <div id="historico_mensagens">
+     </div>
+     <form id='chat'>
+         <input type='text' id='texto_mensagem' name='texto_mensagem' />
+         <input type='submit' value='Enviar mensagem!' />
+     </form>
+     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+     <script type="text/javascript">
+              var socket = io.connect();
+     
+              $("form#chat").submit(function(e){
+                   e.preventDefault();
+                   socket.emit("enviar mensagem", $(this).find("#texto_mensagem").val(), function(){
+                        $("form#chat #texto_mensagem").val("");
+                   });
+              });
+     
+              $("form#chat").submit(function(e){
+                    // Conteúdo da função
+                });
+                socket.on("atualizar mensagens", function(mensagem){
+                var mensagem_formatada = $("<p />").text(mensagem);
+                    $("#historico_mensagens").append(mensagem_formatada);
+                });
+     </script>
+     </body>
+     </html>
