@@ -1,10 +1,13 @@
 const express = require("express");
 const axios = require("axios");
 var cors = require("cors");
+require("dotenv-safe").config(); //biblioteca para carregar as variáveis de ambiente
 
-const CLIENT_ID = "cdc923255bd5d3e884a0";
-const CLIENT_SECRET = "de846b4a6d0e302e1e40c69f3570553e36f11232";
-const GITHUB_URL = "https://github.com/login/oauth/access_token";
+
+const CLIENT_ID = process.env.CLIENT_ID ;
+const CLIENT_SECRET = process.env.CLIENT_SECRET;
+const GITHUB_URL = process.env.GITHUB_URL ;
+
 
 const app = express();
 app.use(cors({ credentials: true, origin: true }));
